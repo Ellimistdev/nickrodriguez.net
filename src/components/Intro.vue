@@ -12,7 +12,7 @@
           </a>
         </li>
         <li>
-          <a href="https://github.com/endotnick">
+          <a href="https://github.com/ellimistdev">
             <font-awesome-icon :icon="['fab', 'github']"/>
           </a>
         </li>
@@ -22,7 +22,7 @@
           </a>
         </li>
         <li>
-          <a href="https://instagram.com/endotnick">
+          <a href="https://instagram.com/ellimistvox">
             <font-awesome-icon :icon="['fab', 'instagram']"/>
           </a>
         </li>
