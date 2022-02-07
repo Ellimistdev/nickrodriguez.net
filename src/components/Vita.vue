@@ -1,19 +1,19 @@
 <template>
   <div class="vita">
     <h1>Vita!</h1>
-    <VueMarkdown :source='md'></VueMarkdown>
+    <Markdown :source='md'></Markdown>
     <p><a :href='vita'>View as Markdown</a> | <a :href='pdf'>View as PDF</a></p>
   </div>
 </template>
 
 <script>
 import axios from 'axios';
-import VueMarkdown from 'vue-markdown';
+import Markdown from 'vue3-markdown-it';
 
 export default {
   name: 'Vita',
   components: {
-    VueMarkdown,
+    Markdown,
   },
   data() {
     return {

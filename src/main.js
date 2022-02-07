@@ -6,9 +6,10 @@ import {
   faGithub, faLinkedinIn, faInstagram, faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import Vue from 'vue';
+import { createApp } from 'vue';
 import Default from '@/layouts/Default.vue';
 import CustomNav from '@/layouts/CustomNav.vue';
+import Markdown from 'vue3-markdown-it';
 import App from './App.vue';
 import router from './router';
 
@@ -26,13 +27,16 @@ library.add(
   faDesktop,
 );
 
-Vue.component('font-awesome-icon', FontAwesomeIcon);
-Vue.component('default-layout', Default);
-Vue.component('custom-nav-layout', CustomNav);
-
-Vue.config.productionTip = false;
-
-new Vue({
+const app = createApp({
   router,
-  render: (h) => h(App),
-}).$mount('#app');
+  ...App,
+});
+
+app.component('font-awesome-icon', FontAwesomeIcon);
+app.component('default-layout', Default);
+app.component('custom-nav-layout', CustomNav);
+
+app.use(Markdown);
+app.use(router);
+
+app.mount('#app');
