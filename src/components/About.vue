@@ -1,5 +1,5 @@
 <template>
-  <div class='about' v-html='data.fields.content'>
+  <div class='about' v-html='data'>
   </div>
 </template>
 
@@ -16,7 +16,7 @@ export default {
   methods: {
     getData() {
       butter.page.retrieve('wysiwyg', 'about').then((res) => {
-        this.data = res.data.data;
+        this.data = res.data.data.fields.content;
       });
     },
   },

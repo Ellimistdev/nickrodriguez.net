@@ -1,25 +1,26 @@
 <template>
   <div id='blog-post'>
-    <h1>{{ post.data.title }}</h1>
-    <h4>By {{ post.data.author.first_name }} {{ post.data.author.last_name }}</h4>
-    <div v-html='post.data.body'></div>
+    <h1>{{ post?.data?.title }}</h1>
+    <h4>By {{ post?.data?.author?.first_name }} {{ post?.data?.author?.last_name }}</h4>
+    <div v-html='post?.data?.body'></div>
     <hr>
     <p class='adjacent-posts'>
       <router-link
-        v-if='post.meta.previous_post'
-        :to='`/minutiae/${post.meta.previous_post.slug}`'
+        v-if='post?.meta?.previous_post'
+        :to='`/minutiae/${post?.meta?.previous_post?.slug}`'
         class='button'
       >
         <span><font-awesome-icon icon='arrow-left' />&nbsp;</span>
-        {{ post.meta.previous_post.title }}
+        {{ post?.meta?.previous_post?.title }}
       </router-link>
-      <span v-if='post.meta.previous_post && post.meta.next_post'>|</span>
+      <span v-if='post?.meta?.previous_post && post?.meta?.next_post'>|</span>
       <router-link
-        v-if='post.meta.next_post'
-        :to='`/minutiae/${post.meta.next_post.slug}`'
+        v-if='post?.meta?.next_post'
+        :to='`/minutiae/${post?.meta?.next_post?.slug}`'
         class='button'
       >
-        {{ post.meta.next_post.title }}<span>&nbsp;<font-awesome-icon icon='arrow-right' /></span>
+        {{ post?.meta?.next_post?.title }}
+        <span>&nbsp;<font-awesome-icon icon='arrow-right' /></span>
       </router-link>
     </p>
   </div>

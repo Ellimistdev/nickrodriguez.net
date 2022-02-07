@@ -1,19 +1,19 @@
 <template>
   <div id='project'>
-    <h1>{{ project.title }}</h1>
-    <div v-html='project.long_description'></div>
-    <p class='stack'>Built with {{ project.stack }}.</p>
+    <h1>{{ project?.title }}</h1>
+    <div v-html='project?.long_description'></div>
+    <p class='stack'>Built with {{ project?.stack }}.</p>
     <p class='links'>
-      <a class='source' :href='`${project.source}`'>
+      <a class='source' :href='`${project?.source}`'>
         Source: <font-awesome-icon :icon="['fab', 'github']"/>
       </a>
-      <span v-if='project.live_demo'>
-        <a :href='`${project.live_demo}`'>
+      <span v-if='project?.live_demo'>
+        <a :href='`${project?.live_demo}`'>
           Live Demo: <font-awesome-icon icon='desktop'/>
         </a>
       </span>
-      <span v-if='project.live_prod'>
-        <a :href='`${project.live_prod}`'>
+      <span v-if='project?.live_prod'>
+        <a :href='`${project?.live_prod}`'>
           Live Site: <font-awesome-icon icon='desktop'/>
         </a>
       </span>

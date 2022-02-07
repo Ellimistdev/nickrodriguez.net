@@ -1,20 +1,20 @@
 <template>
   <div id='project-feed'>
-      <div class='project' v-for='(project,index) in projects' :key='`${project.slug}_${index}`'>
+      <div class='project' v-for='(project,index) in projects' :key='`${project?.slug}_${index}`'>
         <article class='media'>
           <router-link :to='`/projects/${project.slug}`'>
             <figure>
-              <img v-if='project.fields.hero_image' :src='project.fields.hero_image' alt=''>
+              <img v-if='project?.fields?.hero_image' :src='project?.fields?.hero_image' alt=''>
               <img v-else src='http://via.placeholder.com/250x250' alt=''>
               <figcaption>
-                <span class='project_title'>Project: {{ project.fields.title }}</span>
+                <span class='project_title'>Project: {{ project?.fields?.title }}</span>
               </figcaption>
             </figure>
           </router-link>
           <div class='info'>
             <p class='description'>
-              {{ project.fields.short_description }}.<br/>
-              Built with {{ project.fields.stack }}.
+              {{ project?.fields?.short_description }}.<br/>
+              Built with {{ project?.fields?.stack }}.
             </p>
             <p class='details'>
               <router-link class='button' :to='`/projects/${project.slug}`'>
@@ -22,16 +22,16 @@
               </router-link>
             </p>
             <p class='links'>
-              <a class='source' :href='`${project.fields.source}`'>
+              <a class='source' :href='`${project?.fields?.source}`'>
                 Source: <font-awesome-icon :icon="['fab', 'github']"/>
               </a>
-              <span v-if='project.fields.live_demo'>
-                <a :href='`${project.fields.live_demo}`'>
+              <span v-if='project?.fields?.live_demo'>
+                <a :href='`${project?.fields?.live_demo}`'>
                   Live Demo: <font-awesome-icon icon='desktop'/>
                 </a>
               </span>
-              <span v-if='project.fields.live_prod'>
-                <a :href='`${project.fields.live_prod}`'>
+              <span v-if='project?.fields?.live_prod'>
+                <a :href='`${project?.fields?.live_prod}`'>
                   Live Site: <font-awesome-icon icon='desktop'/>
                 </a>
               </span>
