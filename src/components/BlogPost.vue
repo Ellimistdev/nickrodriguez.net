@@ -10,7 +10,8 @@
         :to='`/minutiae/${post.meta.previous_post.slug}`'
         class='button'
       >
-        <span><font-awesome-icon icon='arrow-left' />&nbsp;</span>{{ post.meta.previous_post.title }}
+        <span><font-awesome-icon icon='arrow-left' />&nbsp;</span>
+        {{ post.meta.previous_post.title }}
       </router-link>
       <span v-if='post.meta.previous_post && post.meta.next_post'>|</span>
       <router-link

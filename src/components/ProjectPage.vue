@@ -36,8 +36,6 @@ export default {
       butter.page.retrieve('project', this.$route.params.slug)
         .then((res) => {
           this.project = res.data.data.fields;
-        }).catch((res) => {
-          // console.log(res);
         });
     },
   },

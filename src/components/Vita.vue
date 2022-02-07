@@ -14,7 +14,7 @@ export default {
   name: 'Vita',
   components: {
     VueMarkdown,
-  },  
+  },
   data() {
     return {
       md: '',

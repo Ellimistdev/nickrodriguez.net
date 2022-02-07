@@ -7,11 +7,11 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import Vue from 'vue';
+import Default from '@/layouts/Default.vue';
+import CustomNav from '@/layouts/CustomNav.vue';
 import App from './App.vue';
 import router from './router';
 
-import Default from '@/layouts/Default.vue';
-import CustomNav from '@/layouts/CustomNav.vue';
 
 library.add(
   faEnvelope,
